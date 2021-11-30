@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+:root {
+  --Blue: hsl(246, 80%, 60%);
+  --Lightredwork: hsl(15, 100%, 70%);
+  --Softblueplay: hsl(195, 74%, 62%);
+  --Lightredstudy: hsl(348, 100%, 68%);
+  --Limegreenexercise: hsl(145, 58%, 55%);
+  --Violetsocial: hsl(264, 64%, 52%);
+  --Softorangeselfcare: hsl(43, 84%, 65%);
+  --Verydarkblue: hsl(226, 43%, 10%);
+  --Darkblue: hsl(235, 46%, 20%);
+  --Desaturatedblue: hsl(235, 45%, 61%);
+  --PaleBlue: hsl(236, 100%, 87%);
+}
+body,
+p {
+  margin: 0;
+}
+body {
+  display: grid;
+  background-color: var(--Verydarkblue);
+  color: white;
+  padding: 1.5rem 1.5rem 0;
+  gap: 1.5rem;
+  font-weight: 300;
+  font-family: "Rubik", sans-serif;
+}
+header {
+  margin: 0;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--Darkblue);
+  font-size: 1.2rem;
+  & p {
+    cursor: pointer;
+    margin-bottom: 1.2rem;
+    color: var(--Desaturatedblue);
+    transition: color 0.3s ease;
+    &:hover {
+      color: white;
+    }
+  }
+}
+#user {
+  background-color: var(--Blue);
+  display: flex;
+  align-items: center;
+  padding: 1.7rem 1.8rem;
+  border-radius: 1rem;
+  margin-bottom: 1.4rem;
+  & img {
+    height: 4rem;
+    border: 3px solid white;
+    border-radius: 50%;
+  }
+  & p {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 1.2rem;
+    margin-bottom: 0;
+    gap: 0.2rem;
+    font-size: 1.5rem;
+    color: white;
+  }
+  & span {
+    color: var(--PaleBlue);
+    font-size: 1rem;
+  }
+}
+#timeFrames {
+  display: flex;
+  justify-content: space-evenly;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+.card {
+  display: flex;
+  align-items: flex-end;
+  background-repeat: no-repeat;
+  background-position: top -1rem right 1rem;
+  border-radius: 1rem;
+  padding-top: 2.2rem;
+  &:hover {
+    .container {
+      background-color: hsl(235, 46%, 35%);
+    }
+  }
+}
+#Work {
+  background-color: var(--Lightredwork);
+  background-image: url("./images/icon-work.svg");
+}
+#Play {
+  background-color: var(--Softblueplay);
+  background-image: url("./images/icon-play.svg");
+}
+#Study {
+  background-color: var(--Lightredstudy);
+  background-image: url("./images/icon-study.svg");
+}
+#Exercise {
+  background-color: var(--Limegreenexercise);
+  background-image: url("./images/icon-exercise.svg");
+}
+#Social {
+  background-color: var(--Violetsocial);
+  background-image: url("./images/icon-social.svg");
+}
+#SelfCare {
+  background-color: var(--Softorangeselfcare);
+  background-image: url("./images/icon-self-care.svg");
+}
+.container {
+  width: calc(100% - 3rem);
+  overflow: hidden;
+  background-color: var(--Darkblue);
+  border-radius: 0.9rem;
+  padding: 1.5rem;
+  gap: 0.2rem;
+  display: flex;
+  flex-direction: column;
+}
+.title,
+.data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & p:last-child {
+    color: var(--PaleBlue);
+  }
+}
+.title {
+  & p:first-child {
+    font-size: 1.2rem;
+  }
+  & p:last-child {
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: var(--PaleBlue);
+    transition: color 0.3s ease;
+    &:hover {
+      color: white;
+    }
+  }
+}
+.data {
+  & p:first-child {
+    font-size: 2rem;
+  }
+}
+.active {
+  color: white;
+}
+#attribution {
+  position: fixed;
+  margin-bottom: 1.5rem;
+  bottom: 0rem;
+  left: 0;
+  right: 0;
+  font-size: 11px;
+  text-align: center;
+  & a {
+    color: var(--Softorangeselfcare);
+  }
+}
+@media (min-width: 950px) {
+  body {
+    max-width: 1110px;
+    margin: 2rem auto 0;
+    grid-template-columns: 1fr 3fr;
+  }
+  #user {
+    display: block;
+    & p {
+      margin: 2rem 0 3rem 0;
+      font-size: 2.5rem;
+    }
+  }
+  #timeFrames {
+    flex-direction: column;
+    padding-left: 2rem;
+  }
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .container {
+    padding: 1.5rem 2rem;
+  }
+  .data {
+    flex-direction: column;
+    align-items: flex-start;
+    & p:first-child {
+      font-size: 3rem;
+      margin: 0.8rem 0;
+    }
+  }
+}
+@media (min-width: 600px) and (max-width: 949px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  #attribution {
+    position: static;
+  }
+}
